@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/jsonp'
 require 'json'
 
 bot_count = 0
@@ -6,16 +7,16 @@ bot_count = 0
 get '/readysetgo.json' do
   bot_count = params[:bots]
   puts "Ready! Set! Go! with #{bot_count} bots!"
-  {:readysetgo => true}.to_json
+  jsonp({:readysetgo => true})
 end
 
 get '/gameover.json' do
   puts "Game over!"
-  {:gameover => true}.to_json
+  jsonp({:gameover => true})
 end
 
 get '/turn.json' do
   puts params.to_json
-  {:move => "w", :speed => 1}.to_json
+  jsonp({:move => "w", :speed => 1})
 end
 
