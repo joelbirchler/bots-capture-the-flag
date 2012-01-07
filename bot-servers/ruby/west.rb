@@ -17,6 +17,6 @@ end
 
 get '/turn.json' do
   puts params.to_json
-  jsonp({:move => "w", :speed => 1})
+  jsonp({:move => "w"})
 end
 
