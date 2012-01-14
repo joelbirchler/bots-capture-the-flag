@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'sinatra'
 require 'sinatra/jsonp'
 require 'json'
@@ -17,6 +18,6 @@ end
 
 get '/turn.json' do
   puts params.to_json
-  jsonp({:move => "w"})
+  jsonp({:x => 1})
 end
 
