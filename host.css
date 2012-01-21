@@ -1,8 +1,10 @@
 body, html {
-  background-color: #666;
+  background-color: #000;
   color: #ccc;
+  text-align: center;
 }
 
 canvas {
   background-color: black;
+  border: 1px solid cyan;
 }

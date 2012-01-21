@@ -70,7 +70,7 @@ $(function() {
         if (!data['x'] && !data['y']) { that.energy += 2; }
         if ( that.energy < 0 ) { that.energy = 0; }
         
-        if (canMoveTo(goalX, goalY)) {
+        if (that.energy && canMoveTo(goalX, goalY)) {
           bot.x = goalX;
           bot.y = goalY;
         }
@@ -92,10 +92,10 @@ $(function() {
     bot.go(function() { 
       busy = false;
       draw();
-      if (bot.energy > 0) { doTurn(); }
+      doTurn();
     });
   }
-  setInterval(function() { ding = true; doTurn(); }, 30);  
+  setInterval(function() { ding = true; doTurn(); }, 100);  
   
 
 });
